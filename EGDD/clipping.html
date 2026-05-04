@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clipping</title>
+    <style>
+        canvas{
+            border: 2px solid rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+      <canvas id="meuCanvas" width="1468" height="708"></canvas>
+    <script>
+        let canvas = document.getElementById('meuCanvas');
+        let context = canvas.getContext('2d');
+
+        let imgSonic = new Image();
+        imgSonic.src = './IMG/sonic.png';
+        imgSonic.onload = function(){                         
+        
+        let linhas = 3;
+        let colunas = 8;
+
+        let largura = imgSonic.width / colunas;
+        let altura = imgSonic.height / linhas;
+
+        let escolhaLinha = 0;
+        let escolhaColuna = 0;
+
+        let x = largura * escolhaColuna;
+        let y = altura * escolhaLinha;
+    
+        let posicaoXdoDesenho = 10;
+        let posicaoYdoDesenho = 10;
+
+         context.drawImage (imgSonic, x, y, largura, altura, posicaoXdoDesenho, posicaoYdoDesenho, largura, altura);
+
+        }
+        </script>
+</body>
+</html>

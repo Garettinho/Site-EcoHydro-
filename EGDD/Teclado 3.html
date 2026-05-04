@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Teclado - Exemplo 3</title> 
+
+    <style> 
+
+        canvas{ 
+            border: 2px solid black; 
+        } 
+
+    </style> 
+
+</head> 
+
+<body> 
+
+    <canvas id="teclado_3" width="1520" height="700"></canvas> 
+    <script src="./JS/Teclado.js"></script> 
+    <script src="./JS/heroi.js"></script> 
+    <script src="./JS/Boola.js"></script> 
+    <script src="./JS/Animacao.js"></script> 
+
+    <script> 
+
+        let canvas= document.getElementById('teclado_3'); 
+        let context= canvas.getContext('2d'); 
+        let teclado= new Teclado(document);
+        let animacao= new Animacao(context); 
+        let heroi= new Heroi(context, teclado, animacao); 
+
+        heroi.x= 300; 
+
+        heroi.y= 100; 
+
+        animacao.novoSprite(heroi); 
+        teclado.disparou(ESPACO, function(){ 
+
+            heroi.atirar(); 
+
+        }); 
+        
+        animacao.ligar(); 
+    </script> 
+
+</body> 
+
+</html> 
+
+  

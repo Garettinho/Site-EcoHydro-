@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Exemplo 2 - Teclado</title> 
+    <style> 
+
+        canvas{ 
+            border: 2px solid black; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <canvas id="canvas_teclado_2" width="800" height="500"></canvas> 
+    <script src="JS/Teclado.js"></script> 
+    <script> 
+
+        let canvas=document.getElementById('canvas_teclado_2'); 
+        let context=canvas.getContext('2d') 
+        let posicao = 0; 
+
+        desenharPersonagem(); 
+
+        let teclado = new Teclado(document); 
+        requestAnimationFrame(animar); 
+
+        function animar(){ 
+
+            if(teclado.pressionada(SETA_ESQUERDA)) 
+            posicao -=10; 
+            else if(teclado.pressionada(SETA_DIREITA)) 
+            posicao+=10; 
+
+            desenharPersonagem(); 
+
+            requestAnimationFrame(animar); 
+
+        } 
+
+        function desenharPersonagem(){ 
+            context.clearRect(0, 0, canvas.width, canvas.height); 
+            context.fillRect(posicao, 100, 20, 50); 
+
+        } 
+
+        </script> 
+
+</body> 
+
+</html> 

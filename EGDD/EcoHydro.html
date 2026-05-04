@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoHydro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* NAVBAR */
+header {
+    background: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.logo span.eco {
+    color: #2E7D32;
+    font-weight: 300;
+}
+
+.logo span.hydro {
+    color: #0288D1;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #0288D1;
+}
+
+nav a.active {
+    color: #0288D1;
+    border-bottom: 2px solid #0288D1;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(2,136,209,0.8), rgba(46,125,50,0.8)),
+                url('./IMG/Gemini.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    margin-top: 80px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: white;
+    color: #0288D1;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #0288D1;
+}
+
+/* SOBRE */
+.about {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* SERVIÇOS */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* PREVIEW LATERAL */
+.product-preview {
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.product-preview img {
+    width: 90%;
+    height: auto;
+}
+
+.product-preview.active {
+    opacity: 1;
+}
+
+/* VALORES */
+.values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.value {
+    background: #e8f5e9;
+    padding: 15px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #2E7D32;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(to right, #2E7D32, #0288D1);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 30px;
+}
+
+footer span {
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <span class="eco">Eco</span><span class="hydro">HYDRO</span>
+    </div>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Cada gota no lugar certo.</h1>
+        <p>Transforme o desperdício do seu ar-condicionado em uma solução sustentável.</p>
+        <a href="#servicos" class="btn">Conheça nossos serviços</a>
+    </div>
+</section>
+
+<section id="sobre">
+    <div class="section-title">
+        <h2>Sobre a EcoHydro</h2>
+    </div>
+    <div class="about">
+        <p>
+            A EcoHydro transforma desperdício em recurso, oferecendo soluções simples e eficientes
+            para reaproveitamento de água em residências e empresas.
+        </p>
+    </div>
+</section>
+
+<section id="servicos">
+    <div class="section-title">
+        <h2>Serviços</h2>
+    </div>
+
+    <div class="services">
+
+        <div class="service-card" data-img="./IMG/mark I.png">
+            <h3>Hydro Mark I</h3>
+            <p>Captação de água inteligente.</p>
+        </div>
+
+        <div class="service-card" data-img="./IMG/mark II.png">
+            <h3>Hydro Mark II</h3>
+            <p>Sistema avançado de reaproveitamento.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Instalação</h3>
+            <p>Rápida e de baixo custo.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Consultoria</h3>
+            <p>Reaproveitamento eficiente.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Kits</h3>
+            <p>Personalizados.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Manutenção</h3>
+            <p>Simples e eficaz.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PREVIEW -->
+<div class="product-preview">
+    <img id="preview-img" src="">
+</div>
+
+<section>
+    <div class="section-title">
+        <h2>Valores</h2>
+    </div>
+
+    <div class="values">
+        <div class="value">Simplicidade</div>
+        <div class="value">Sustentabilidade</div>
+        <div class="value">Inovação</div>
+        <div class="value">Responsabilidade</div>
+        <div class="value">Transparência</div>
+        <div class="value">Eficiência</div>
+    </div>
+</section>
+
+<section class="cta" id="contato">
+    <h2>Comece hoje</h2>
+    <p>Fale conosco e implemente a EcoHydro.</p>
+    <br>
+    <a href="https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20EcoHydro." 
+   class="btn" 
+   target="_blank">
+   Fale no WhatsAppg
+</a>
+</section>
+
+<footer>
+    <p>© 2026 <span>EcoHydro</span></p>
+</footer>
+
+<script>
+// SCROLL SUAVE
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+
+// ANIMAÇÃO
+const elements = document.querySelectorAll(".service-card, .value, .about");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, { threshold: 0.2 });
+
+elements.forEach(el => observer.observe(el));
+
+// PREVIEW PRODUTO
+const preview = document.querySelector(".product-preview");
+const previewImg = document.getElementById("preview-img");
+
+document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        const img = card.getAttribute("data-img");
+
+        if (img) {
+            previewImg.src = img;
+            preview.classList.add("active");
+        }
+    });
+
+    card.addEventListener("mouseleave", () => {
+        preview.classList.remove("active");
+    });
+});
+</script>
+
+</body>
+</html>
